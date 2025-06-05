@@ -1,13 +1,13 @@
 import express from "express";
 
-import gamesController from "./src/routes/games.js";
-import clientsController from "./src/routes/clients.js";
+import gamesRoutes from "./src/routes/games.js";
+import clientsRoutes from "./src/routes/clients.js";
 
 const app = express();
 
 app.use(express.json());
 
-app.use("/api/games", gamesController);
-app.use("/api/clients", clientsController);
+app.use("/api/games", gamesRoutes);
+app.use("/api/clients", clientsRoutes);
 
 export default app;
