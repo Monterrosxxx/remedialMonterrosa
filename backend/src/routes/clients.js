@@ -2,7 +2,7 @@ import express from "express";
 
 const router = express.Router();
 
-import clientsController from "../controllers/clientsController";
+import clientsController from "../controllers/clientsController.js";
 
 router.route("/")
     .get(clientsController.getClients)
