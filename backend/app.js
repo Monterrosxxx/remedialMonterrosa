@@ -2,8 +2,16 @@ import express from "express";
 
 import gamesRoutes from "./src/routes/games.js";
 import clientsRoutes from "./src/routes/clients.js";
+import cors from "cors";
 
 const app = express();
+
+//Usar el cors para permitir peticiones desde el frontend
+app.use(cors({
+    origin: " http://localhost:5173/",
+    credentials: true
+})
+);
 
 app.use(express.json());
 

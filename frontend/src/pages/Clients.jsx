@@ -17,7 +17,7 @@ const Clients = () => {
     countryOfResidence: ''
   });
 
-  const API_URL = 'http://localhost:3000/api/clients';
+  const API_URL = "http://localhost:4000/api/clients";
 
   const countries = [
     'Argentina', 'Brasil', 'Chile', 'Colombia', 'Costa Rica', 'Ecuador', 

@@ -14,7 +14,7 @@ const Games = () => {
     maximumBet: ''
   });
 
-  const API_URL = 'http://localhost:3000/api/games';
+  const API_URL = "http://localhost:4000/api/games";
 
   // Obtener juegos
   const getGames = async () => {
