@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { toast } from 'react-hot-toast';
-import "../styles/Games.css"
+import "../styles/Games.css"; // Asegúrate de tener este archivo CSS para estilos
 
-const Games = () => {
+const Games = ({ currentPage, setCurrentPage }) => {
   const [games, setGames] = useState([]);
   const [loading, setLoading] = useState(false);
   const [showModal, setShowModal] = useState(false);
@@ -14,7 +14,7 @@ const Games = () => {
     maximumBet: ''
   });
 
-  const API_URL = "http://localhost:4000/api/games";
+  const API_URL = 'http://localhost:4000/api/games'; // Cambia el puerto según tu backend
 
   // Obtener juegos
   const getGames = async () => {
@@ -150,6 +150,36 @@ const Games = () => {
 
   return (
     <div className="games-container">
+      {/* Navigation */}
+      <nav className="main-nav">
+        <div className="nav-content">
+          <div className="logo">
+            <span className="logo-icon">🎰</span>
+            <span className="logo-text">Casino Colonial</span>
+          </div>
+          <div className="nav-links">
+            <button 
+              className={`nav-btn ${currentPage === 'home' ? 'active' : ''}`}
+              onClick={() => setCurrentPage('home')}
+            >
+              🏠 Inicio
+            </button>
+            <button 
+              className={`nav-btn ${currentPage === 'clients' ? 'active' : ''}`}
+              onClick={() => setCurrentPage('clients')}
+            >
+              👥 Clientes
+            </button>
+            <button 
+              className={`nav-btn ${currentPage === 'games' ? 'active' : ''}`}
+              onClick={() => setCurrentPage('games')}
+            >
+              🎮 Juegos
+            </button>
+          </div>
+        </div>
+      </nav>
+
       <div className="casino-bg"></div>
       
       <header className="games-header">

@@ -1,17 +1,17 @@
 /*
 asi esta escrito todo en el env:
 
-DB_URI
-PORT
+DB_URI=mongodb://localhost:27017/casino_colonial
+PORT=4000
 JWT_SECRET=
 JWT_EXPIRES=
 ADMIN_EMAIL=
-ADMIN_PASSWORD
-USER_EMAIL
-USER_PASS
-CLOUD_NAME
-CLOUDINARY_API_KEY
-CLOUDINARY_API_SECRET
+ADMIN_PASSWORD=
+USER_EMAIL=
+USER_PASS=
+CLOUD_NAME=
+CLOUDINARY_API_KEY=
+CLOUDINARY_API_SECRET=
 */
 
 import dotenv from 'dotenv';
@@ -22,7 +22,7 @@ export const config = {
         URI: process.env.DB_URI
     },
     server: {
-        PORT: process.env.PORt
+        PORT: process.env.PORT || 4000  // ⚠️ CORREGIDO: Era "PORt" ahora es "PORT"
     },
     JWT: {
         secret: process.env.JWT_SECRET,

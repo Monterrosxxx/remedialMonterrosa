@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { toast } from 'react-hot-toast';
-import "../styles/Clients.css"
+import "../styles/Clients.css"; // Asegúrate de tener este archivo CSS
 
-const Clients = () => {
+const Clients = ({ currentPage, setCurrentPage }) => {
   const [clients, setClients] = useState([]);
   const [loading, setLoading] = useState(false);
   const [showModal, setShowModal] = useState(false);
@@ -17,7 +17,7 @@ const Clients = () => {
     countryOfResidence: ''
   });
 
-  const API_URL = "http://localhost:4000/api/clients";
+  const API_URL = 'http://localhost:4000/api/clients'; // Cambia el puerto según tu backend
 
   const countries = [
     'Argentina', 'Brasil', 'Chile', 'Colombia', 'Costa Rica', 'Ecuador', 
@@ -198,6 +198,36 @@ const Clients = () => {
 
   return (
     <div className="clients-container">
+      {/* Navigation */}
+      <nav className="main-nav">
+        <div className="nav-content">
+          <div className="logo">
+            <span className="logo-icon">🎰</span>
+            <span className="logo-text">Casino Colonial</span>
+          </div>
+          <div className="nav-links">
+            <button 
+              className={`nav-btn ${currentPage === 'home' ? 'active' : ''}`}
+              onClick={() => setCurrentPage('home')}
+            >
+              🏠 Inicio
+            </button>
+            <button 
+              className={`nav-btn ${currentPage === 'clients' ? 'active' : ''}`}
+              onClick={() => setCurrentPage('clients')}
+            >
+              👥 Clientes
+            </button>
+            <button 
+              className={`nav-btn ${currentPage === 'games' ? 'active' : ''}`}
+              onClick={() => setCurrentPage('games')}
+            >
+              🎮 Juegos
+            </button>
+          </div>
+        </div>
+      </nav>
+
       <div className="casino-bg"></div>
       
       <header className="clients-header">
