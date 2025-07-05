@@ -17,7 +17,7 @@ const Clients = ({ currentPage, setCurrentPage }) => {
     countryOfResidence: ''
   });
 
-  const API_URL = 'http://localhost:4000/api/clients'; // Cambia el puerto según tu backend
+  const API_URL = 'https://remedialmonterrosa-2.onrender.com/api/clients'; // Cambia el puerto según tu backend
 
   const countries = [
     'Argentina', 'Brasil', 'Chile', 'Colombia', 'Costa Rica', 'Ecuador', 

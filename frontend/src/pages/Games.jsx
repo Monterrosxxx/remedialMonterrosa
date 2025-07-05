@@ -14,7 +14,7 @@ const Games = ({ currentPage, setCurrentPage }) => {
     maximumBet: ''
   });
 
-  const API_URL = 'http://localhost:4000/api/games'; // Cambia el puerto según tu backend
+  const API_URL = 'https://remedialmonterrosa-2.onrender.com/api/games'; // Cambia el puerto según tu backend
 
   // Obtener juegos
   const getGames = async () => {
