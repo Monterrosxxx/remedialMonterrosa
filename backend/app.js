@@ -8,7 +8,7 @@ const app = express();
 
 //Usar el cors para permitir peticiones desde el frontend
 app.use(cors({
-    origin: "http://localhost:5173",  // ⚠️ CORREGIDO: Quitamos el espacio extra y la barra final
+    origin: "https://remedial-monterrosa.vercel.app/", 
     credentials: true
 }));
 
