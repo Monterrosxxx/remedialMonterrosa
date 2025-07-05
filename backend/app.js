@@ -8,7 +8,7 @@ const app = express();
 
 //Usar el cors para permitir peticiones desde el frontend
 app.use(cors({
-    origin: "https://remedial-monterrosa.vercel.app/", 
+    origin: "https://remedial-monterrosa.vercel.app", 
     credentials: true
 }));
 
